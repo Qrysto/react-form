@@ -5,7 +5,7 @@ import _ from './utils'
 import FormField from './formField'
 import FormError from './formError'
 
-export default function FormInput ({ field, showErrors = true, errorBefore, isForm, className, children, ...rest }) {
+export default function FormInput ({ field, showErrors = true, errorBefore, isForm, className, children, renderChildren, ...rest }) {
   return (
     <FormField field={field}>
       {({ ...api }) => {
@@ -19,7 +19,7 @@ export default function FormInput ({ field, showErrors = true, errorBefore, isFo
             {errorBefore && showAnyErrors && (
               <FormError field={field} />
             )}
-            {_.normalizeComponent(children, { ...api, ...rest })}
+            {_.resolveChildren(children, renderChildren, { ...api, ...rest })}
             {!errorBefore && showAnyErrors && (
               <FormError field={field} />
             )}

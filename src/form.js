@@ -215,8 +215,8 @@ export default createClass({
       ...this.state,
       ...this.getAPI()
     }
-    const { component, children, ...rest } = props
-    const resolvedChild = _.normalizeComponent(children, rest)
+    const { component, children, renderChildren, ...rest } = props
+    const resolvedChild = _.resolveChildren(children, renderChildren, rest);
     const RootEl = component
     if (!RootEl) {
       return resolvedChild

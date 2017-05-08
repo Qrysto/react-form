@@ -9,7 +9,7 @@ export default {
   pickBy,
   isObject,
   isArray,
-  normalizeComponent
+  resolveChildren
 }
 
 function clone (a) {
@@ -112,10 +112,12 @@ function isStringValidNumber (str) {
   return !isNaN(str)
 }
 
-function normalizeComponent (Comp, props) {
+function resolveChildren (children, renderChildren, props) {
   return (
-    React.isValidElement(Comp) ? React.cloneElement(Comp, props)
-    : typeof Comp === 'function' ? <Comp {...props} />
-      : null
-  )
+    children
+      ? React.cloneElement(children, props) 
+      : renderChildren 
+        ? renderChildren(props)
+        : null
+  );
 }
