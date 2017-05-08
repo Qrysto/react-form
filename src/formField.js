@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 //
 import _ from './utils'
 
@@ -8,5 +8,5 @@ export default function FormField ({field, children, ...rest}, context) {
   return _.normalizeComponent(children, { ...formAPI, ...rest })
 }
 FormField.contextTypes = {
-  formAPI: React.PropTypes.object
+  formAPI: PropTypes.object
 }

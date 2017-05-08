@@ -100,7 +100,7 @@ const myForm = (
 This is an annotated example of the demo, demonstrating a majority of React-Form's features.
 ```javascript
 import React from 'react'
-import { Form, Text, Select, Textarea, Checkbox, Radio, NestedForm, FormError } from 'react-form'
+import { Form, Text, Select, Textarea, Checkbox, Radio, RadioGroup, NestedForm, FormError } from 'react-form'
 
 const MyForm = (
   <Form
@@ -253,29 +253,26 @@ const MyForm = (
 
           <div>
             <h6>Notify me via</h6>
-            <radiogroup>
+            <RadioGroup field="notificationType">
               <label>
                 <Radio // This is the built-in radio formInput
-                  field='notificationType'
                   value='email' // This is the value the field will be set to when this radio button is active
                 />
                 <span>Email</span>
               </label>
               <label>
                 <Radio
-                  field='notificationType'
                   value='text'
                 />
                 <span>Text</span>
               </label>
               <label>
                 <Radio
-                  field='notificationType'
                   value='phone'
                 />
                 <span>Phone</span>
               </label>
-            </radiogroup>
+            </RadioGroup>
           </div>
 
           <br />
@@ -547,7 +544,7 @@ The form API is a merge of the form state object and API methods
 
 #### values {}
 - The current read-only values in the form state.
-- Again, these values immutable, so just like any traditional react state or redux state, they should not be changed or mutated outside of the form lifecycle methods
+- Again, these values are immutable, so just like any traditional react state or redux state, they should not be changed or mutated outside of the form lifecycle methods
 - Example:
 ```javascript
 <Form>
