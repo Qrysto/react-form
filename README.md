@@ -1,3 +1,7 @@
+This is a fork of [react-form](https://github.com/tannerlinsley/react-form).
+
+---
+
 <div align="center">
   <a href="https://github.com/tannerlinsley/react-form" target="\_parent">
     <img src="https://github.com/tannerlinsley/react-form/raw/master/media/banner.png" alt="React Table Logo" style="width:550px;"/>
